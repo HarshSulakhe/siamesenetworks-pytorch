@@ -1,2 +1,2 @@
-# OneShot-Triplet
-An implementation of Triplet Loss in PyTorch using Siamese Networks 
+# Siamese Networks 
+An implementation of Triplet Loss and Contrastive Loss in PyTorch using Siamese Networks 
