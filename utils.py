@@ -55,10 +55,30 @@ def evaluate_pair(output1,output2,target,threshold):
     #     return euclidean_distance > threshold
     # else:
     #     return euclidean_distance <= threshold
-    cond = euclidean_distance>threshold
-    sum = 0
-    for i in range(len(cond)):
-        if cond[i] and target[i]:
-            sum+=1
+    cond = euclidean_distance<threshold
+    # print(cond)
+    pos_sum = 0
+    neg_sum = 0
+    pos_acc = 0
+    neg_acc = 0
 
-    return sum
+    for i in range(len(cond)):
+        if target[i]:
+            neg_sum+=1
+            if not cond[i]:
+                neg_acc+=1
+        if not target[i]:
+            pos_sum+=1
+            if cond[i]:
+                pos_acc+=1
+
+    return pos_acc,pos_sum,neg_acc,neg_sum
+
+
+def initialize_weights(m):
+    classname = m.__class__.__name__
+
+    if (classname.find('Linear') != -1):
+        m.weight.data.normal_(mean = 0, std = 0.01)
+    if (classname.find('Conv') != -1):
+        m.weight.data.normal_(mean = 0.5, std = 0.01)

@@ -3,17 +3,17 @@ import torchvision
 import numpy as np
 from PIL import Image
 
-class CUBContrast(torch.utils.data.Dataset):
+class ATATContrast(torch.utils.data.Dataset):
 # """
 #     A custom class used to sample positive and negative pairs of images with equal probability, the outputs of which are
 #     fed to a contrastive loss function.
 # """
-    def __init__(self,cub_dataset):
+    def __init__(self,atat_dataset):
         ## cub_dataset IS AN ImageFolder DATASET,
         ## THIS FUNCTION MERELY COPIES ITS RELEVANT ATTRIBUTES
-        self.classes = cub_dataset.classes
-        self.imgs = cub_dataset.imgs
-        self.transform = cub_dataset.transform
+        self.classes = atat_dataset.classes
+        self.imgs = atat_dataset.imgs
+        self.transform = atat_dataset.transform
 
     def __getitem__(self,index):
         ## CHOOSE EITHER POSITIVE PAIR (0) OR NEGATIVE PAIR (1)
