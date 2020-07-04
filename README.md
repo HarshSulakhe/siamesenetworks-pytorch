@@ -2,8 +2,8 @@
 An implementation of Contrastive Loss in PyTorch using Siamese Networks
 
 ## Dataset Used
-[Link to Dataset](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html)<br>
-Out of the 200 categories available within the dataset, 140 were used for training the model, 30 for validation, and the remaining 30 were treated as "unseen data" for one shot classification.
+[Link to Dataset](https://www.kaggle.com/kasikrit/att-database-of-faces)<br>
+Out of the 40 faces available within the dataset, 32 were used for training the model, 4 for validation, and the remaining 4 were treated as "unseen data" for one shot classification.
 
 ## File descriptions
 
